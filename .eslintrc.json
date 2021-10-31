@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "no-await-in-loop": "off",
+    "no-plusplus":"off",
+    "react/no-unescaped-entities": "off",
+    "no-unused-vars":"warn",
+    "jsx-a11y/label-has-associated-control":"off",
+    "prettier/prettier": "warn"
+  }
+}

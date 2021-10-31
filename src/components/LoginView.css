@@ -1,0 +1,21 @@
+body {
+  background-image: url('https://res.cloudinary.com/dj7wucuvf/image/upload/v1635650430/__hilbert_and_palpitoad_pokemon_and_2_more_drawn_by_pippi_pixiv_1922055__d9f1a03376388193885605cc662d4941_pipjo9.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* background-size: cover; */
+}
+
+.card {
+  margin-right: auto;
+  margin-left: auto;
+  width: 250px;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  height: 300px;
+  border-radius: 5px;
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: center;
+}
