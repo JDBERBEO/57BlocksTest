@@ -1,28 +1,56 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  CHANGENEXTPAGE,
+  CHANGEPREVIOUSPAGE,
+  getPokemons,
+} from '../store/PokemonsReducer';
 import { PokemonsView } from './PokemonsView';
+import { Error } from './ui/Error';
+import { Loading } from './ui/Loading';
 
 export const PokemonsMain = () => {
-  const [pokemons, setPokemons] = useState([]);
+  // const [currentPageUrl, setcurrentPageUrl] = useState(
+  //   'https://pokeapi.co/api/v2/pokemon?limit=20',
+  // );
+  const dispatch = useDispatch();
+  const { pokemons, loading, error, currentPageUrl } = useSelector(
+    ({ getPokemonsReducer }) => {
+      return {
+        pokemons: getPokemonsReducer.pokemons,
+        error: getPokemonsReducer.error,
+        loading: getPokemonsReducer.loading,
+        currentPageUrl: getPokemonsReducer.currentPageUrl,
+      };
+    },
+  );
+  useEffect(() => {
+    dispatch(getPokemons(currentPageUrl));
+  }, [currentPageUrl]);
 
-  const getpokemons = async () => {
-    const { data } = await axios('https://pokeapi.co/api/v2/pokemon?limit=20');
-    const results = [];
-    for (let i = 0; i < data.results.length; i++) {
-      const result = data.results[i];
-      const response = await axios.get(result.url);
-      results.push(response.data);
-    }
-    setPokemons(results);
+  const gotoNextPage = (e) => {
+    e.preventDefault();
+    dispatch({ type: CHANGENEXTPAGE });
+  };
+  const gotoPreviousPage = (e) => {
+    e.preventDefault();
+    console.log('go to previous page');
+    dispatch({ type: CHANGEPREVIOUSPAGE });
   };
 
-  useEffect(() => {
-    getpokemons();
-  }, []);
+  if (error) return <Error />;
+  if (loading) return <Loading />;
 
   return (
     <div>
-      <PokemonsView pokemons={pokemons} />
+      {!!pokemons && pokemons.length > 0 && (
+        <PokemonsView
+          pokemons={pokemons}
+          gotoNextPage={gotoNextPage}
+          gotoPreviousPage={gotoPreviousPage}
+        />
+      )}
     </div>
   );
 };

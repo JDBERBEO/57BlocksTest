@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const PokemonsView = ({ pokemons }) => {
+export const PokemonsView = ({ pokemons, gotoNextPage, gotoPreviousPage }) => {
   console.log('poke: ', pokemons);
   return (
     <div className="container">
@@ -24,6 +24,12 @@ export const PokemonsView = ({ pokemons }) => {
             </div>
           ))}
       </div>
+      <button type="submit" onClick={gotoNextPage}>
+        NEXT
+      </button>
+      <button type="submit" onClick={gotoPreviousPage}>
+        PREVIOUS
+      </button>
     </div>
   );
 };

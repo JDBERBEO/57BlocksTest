@@ -2,6 +2,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import userReducer from './LoginReducer';
+import getPokemonsReducer from './PokemonsReducer';
 
 function logger(store) {
   return function (next) {
@@ -22,7 +23,7 @@ function logger(store) {
   };
 }
 
-const rootReducer = combineReducers({ userReducer });
+const rootReducer = combineReducers({ userReducer, getPokemonsReducer });
 
 const middlewares = applyMiddleware(thunk, logger);
 

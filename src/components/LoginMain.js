@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { changeEmail, changePassword, login } from '../store/LoginReducer';
 import { LoginView } from './LoginView';
+import { Error } from './ui/Error';
 
 export const LoginMain = () => {
   // TODO:
@@ -50,6 +51,7 @@ export const LoginMain = () => {
           handleSubmit={handleSubmit}
           handleOnchangeEmail={handleOnchangeEmail}
           handleOnchangePassword={handleOnchangePassword}
+          error={error}
         />
         {/* </Col> */}
         {/* </Row> */}

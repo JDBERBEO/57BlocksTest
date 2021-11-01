@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { mockedUsers } from '../constants/loginDb';
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -27,15 +28,11 @@ export function login(email, password, history) {
     dispatch({ type: LOGIN_LOADING });
 
     mockedUsers.map((user) => {
-      console.log('user email: ', user.email);
-      console.log('user password: ', user.password);
-      console.log('email: ', email);
-      console.log('password: ', password);
       if (user.email === email && user.password === password) {
-        localStorage.setItem('token', password);
-        console.log('user correct');
+        const token = uuidv4();
+        localStorage.setItem('token', token);
         dispatch({ type: LOGIN_SUCCESS, payload: user });
-        return history.push('/pokemons');
+        return history.push('/');
       }
       return dispatch({ type: LOGIN_ERROR, payload: user.errorMessage });
     });

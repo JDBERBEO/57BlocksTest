@@ -18,6 +18,8 @@
     "react/no-unescaped-entities": "off",
     "no-unused-vars":"warn",
     "jsx-a11y/label-has-associated-control":"off",
+    "react/jsx-props-no-spreading":"off",
+    "func-names":"off",
     "prettier/prettier": "warn"
   }
 }

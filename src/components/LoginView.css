@@ -1,21 +1,65 @@
 body {
-  background-image: url('https://res.cloudinary.com/dj7wucuvf/image/upload/v1635650430/__hilbert_and_palpitoad_pokemon_and_2_more_drawn_by_pippi_pixiv_1922055__d9f1a03376388193885605cc662d4941_pipjo9.jpg');
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* background-size: cover; */
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(87, 87, 161, 1) 42%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
-.card {
+.loginCard {
   margin-right: auto;
   margin-left: auto;
-  width: 250px;
-  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-  height: 300px;
-  border-radius: 5px;
-  backdrop-filter: blur(14px);
+  margin-top: 20px;
+  width: 400px;
+  box-shadow: 10px 10px 20px rgba(246, 250, 5, 0.2);
+  border: 5px solid #a8ab9b;
   background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  height: 600px;
+  backdrop-filter: blur();
   padding: 10px;
+}
+
+.loginForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border-radius: 5px;
+  border-color: rgb(127, 163, 255);
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+}
+
+label {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: larger;
+  color: rgb(17, 16, 79);
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.loginHeader {
+  object-fit: contain;
+  text-align: center;
+}
+
+.loginButton {
+  margin-top: 15%;
+}
+
+.loginError {
+  color: red;
 }

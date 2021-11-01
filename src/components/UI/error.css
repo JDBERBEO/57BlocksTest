@@ -1,0 +1,16 @@
+html {
+  font-size: 16px;
+}
+
+.errorCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.errorHead {
+  color: #e73c17;
+  font-family: 'Rubik Mono One', sans-serif;
+  margin: 5%;
+}
