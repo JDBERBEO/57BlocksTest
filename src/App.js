@@ -11,8 +11,8 @@ import { FavoritePokemons } from './components/views/pokemons/favorites/Favorite
 function App() {
   return (
     <>
-      <NavBar />
       <Router>
+        <NavBar />
         <Switch>
           <Route exact path="/login" component={LoginMain} />
           <PrivateRouter exact path="/" component={PokemonsMain} />
