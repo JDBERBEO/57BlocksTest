@@ -14,7 +14,7 @@ export function getPokemons(currentPageUrl) {
       dispatch({ type: POKEMONS_LOADING });
 
       const { data } = await axios(currentPageUrl);
-      console.log('data: ', data);
+
       const results = [];
       for (let i = 0; i < data.results.length; i++) {
         const result = data.results[i];
@@ -33,8 +33,8 @@ export function getPokemons(currentPageUrl) {
 const initialState = {
   pokemons: '',
   currentPageUrl: 'https://pokeapi.co/api/v2/pokemon?limit=20',
-  next: '',
-  previous: '',
+  next: false,
+  previous: false,
   loading: false,
   error: false,
 };

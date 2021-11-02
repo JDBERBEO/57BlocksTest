@@ -21,8 +21,6 @@ export function changePassword(password) {
   };
 }
 
-// TODO: loading and error response
-
 export function login(email, password, history) {
   return function (dispatch) {
     dispatch({ type: LOGIN_LOADING });

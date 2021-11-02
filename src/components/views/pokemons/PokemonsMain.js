@@ -5,26 +5,24 @@ import {
   CHANGENEXTPAGE,
   CHANGEPREVIOUSPAGE,
   getPokemons,
-} from '../store/PokemonsReducer';
+} from '../../../store/PokemonsReducer';
 import { PokemonsView } from './PokemonsView';
-import { Error } from './ui/Error';
-import { Loading } from './ui/Loading';
+import { Error } from '../../ui/Error';
+import { Loading } from '../../ui/Loading';
 
 export const PokemonsMain = () => {
-  // const [currentPageUrl, setcurrentPageUrl] = useState(
-  //   'https://pokeapi.co/api/v2/pokemon?limit=20',
-  // );
   const dispatch = useDispatch();
-  const { pokemons, loading, error, currentPageUrl } = useSelector(
-    ({ getPokemonsReducer }) => {
+  const { pokemons, loading, error, currentPageUrl, previous, next } =
+    useSelector(({ getPokemonsReducer }) => {
       return {
         pokemons: getPokemonsReducer.pokemons,
         error: getPokemonsReducer.error,
         loading: getPokemonsReducer.loading,
         currentPageUrl: getPokemonsReducer.currentPageUrl,
+        previous: getPokemonsReducer.previous,
+        next: getPokemonsReducer.next,
       };
-    },
-  );
+    });
   useEffect(() => {
     dispatch(getPokemons(currentPageUrl));
   }, [currentPageUrl]);
@@ -35,7 +33,6 @@ export const PokemonsMain = () => {
   };
   const gotoPreviousPage = (e) => {
     e.preventDefault();
-    console.log('go to previous page');
     dispatch({ type: CHANGEPREVIOUSPAGE });
   };
 
@@ -49,6 +46,8 @@ export const PokemonsMain = () => {
           pokemons={pokemons}
           gotoNextPage={gotoNextPage}
           gotoPreviousPage={gotoPreviousPage}
+          previous={previous}
+          next={next}
         />
       )}
     </div>
