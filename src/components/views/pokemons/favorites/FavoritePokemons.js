@@ -24,7 +24,7 @@ export const FavoritePokemons = () => {
 
   return (
     <>
-      <h1>I LOVE THIS POKEMONS!</h1>
+      <h1>I LOVE THESE POKEMONS!</h1>
       <div className="containerPokemons">
         {!!pokemons &&
           pokemons.length > 0 &&
