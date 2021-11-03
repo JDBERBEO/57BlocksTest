@@ -48,8 +48,12 @@ export const FavoritePokemons = () => {
                   className="cardImgTop"
                   alt="pokemon img"
                 />
-                <Button onClick={() => deleteFavoritePokemon(pokemon.id)}>
-                  deletepoke
+                <Button
+                  className="deleteButton"
+                  variant="danger"
+                  onClick={() => deleteFavoritePokemon(pokemon.id)}
+                >
+                  Delete pokemon
                 </Button>
               </div>
             </React.Fragment>

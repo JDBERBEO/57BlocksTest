@@ -35,6 +35,10 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+
+.deleteButton {
+  margin-bottom: 15px;
+}
 .buttonWrapper {
   display: flex;
   justify-content: space-evenly;

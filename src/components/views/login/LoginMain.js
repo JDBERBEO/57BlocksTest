@@ -10,10 +10,6 @@ import {
 } from '../../../store/LoginReducer';
 import { LoginView } from './LoginView';
 
-export const handleLogout = () => {
-  localStorage.removeItem('token');
-};
-
 export const LoginMain = () => {
   const history = useHistory();
   const { email, password, error } = useSelector(({ userReducer }) => {
