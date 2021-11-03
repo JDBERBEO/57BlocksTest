@@ -10,7 +10,9 @@ export const PokemonsView = ({
   previous,
   next,
 }) => {
-  const [favorites, setfavorites] = useState([]);
+  const [favorites, setfavorites] = useState(
+    JSON.parse(localStorage.getItem('favorites')),
+  );
 
   const handleAddFavorites = (pokemonId) => {
     setfavorites([...favorites, pokemonId]);

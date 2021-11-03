@@ -1,7 +1,7 @@
 // import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { PokemonsMain } from './components/views/pokemons/PokemonsMain';
-import { PokemonMain } from './components/views/pokemons/PokemonMain';
+import { PokemonMain } from './components/views/pokemons/pokemonDetails/PokemonMain';
 import { LoginMain } from './components/views/login/LoginMain';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PrivateRouter } from './components/routes/PrivateRouter';

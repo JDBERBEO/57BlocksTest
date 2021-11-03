@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 
 export const NavBar = () => {
   const history = useHistory();
+  const location = useLocation();
 
-  const [activeButton, setActive] = useState(true);
+  const [activeButton, setActive] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [location]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    setActive(false);
     history.push('/login');
-    console.log('logout');
   };
-
-  console.log('activeButton', activeButton);
 
   return (
     <>
@@ -32,7 +37,7 @@ export const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link href="/favorites">Favorites</Nav.Link>
             </Nav>
-            {activeButton && localStorage.getItem('token') ? (
+            {activeButton ? (
               <Button onClick={handleLogout}>Logout</Button>
             ) : null}
           </Navbar.Collapse>

@@ -20,6 +20,8 @@ h1 {
   /* padding-top: 290px; */
   color: #f2eb2c;
   font-family: 'Rubik Mono One', sans-serif;
+  align-items: center;
+  text-align: center;
   /* object-fit: contain; */
 }
 

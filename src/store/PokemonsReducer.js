@@ -9,7 +9,6 @@ export const CHANGEPREVIOUSPAGE = 'CHANGEPREVIOUSPAGE';
 
 export function getPokemons(currentPageUrl) {
   return async function (dispatch) {
-    console.log('data');
     try {
       dispatch({ type: POKEMONS_LOADING });
 

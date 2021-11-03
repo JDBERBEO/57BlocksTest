@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 
 // import Button from 'react-bootstrap/Button';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,25 +10,23 @@ import {
 } from '../../../store/LoginReducer';
 import { LoginView } from './LoginView';
 
-export const handleLogout = (e) => {
+export const handleLogout = () => {
   localStorage.removeItem('token');
 };
 
 export const LoginMain = () => {
   const history = useHistory();
-  const { email, password, error, loading } = useSelector(({ userReducer }) => {
+  const { email, password, error } = useSelector(({ userReducer }) => {
     return {
       email: userReducer.email,
       password: userReducer.password,
       error: userReducer.error,
-      loading: userReducer.loading,
     };
   });
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     dispatch(login(email, password, history));
   };
 

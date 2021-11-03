@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './pokemonView.css';
 
 export const PokemonView = ({ pokemon }) => {
-  console.log('pokemon: ', pokemon);
   return (
     <div>
       {!!pokemon && (
