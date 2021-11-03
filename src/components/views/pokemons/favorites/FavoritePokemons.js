@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 
 export const FavoritePokemons = () => {
   // eslint-disable-next-line prefer-const
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
+    // eslint-disable-next-line consistent-return
     const load = async () => {
       const favorites = JSON.parse(localStorage.getItem('favorites'));
+      if (!favorites) return null;
+
       const promises = [];
 
       for (let i = 0; i < favorites.length; i++) {
@@ -21,6 +25,13 @@ export const FavoritePokemons = () => {
 
     load();
   }, []);
+
+  const deleteFavoritePokemon = (id) => {
+    const filteredPokemons = pokemons.filter((pokemon) => pokemon.id !== id);
+    const filteredId = filteredPokemons.map((pokemon) => pokemon.id);
+    setPokemons(filteredPokemons);
+    localStorage.setItem('favorites', JSON.stringify(filteredId));
+  };
 
   return (
     <>
@@ -37,6 +48,9 @@ export const FavoritePokemons = () => {
                   className="cardImgTop"
                   alt="pokemon img"
                 />
+                <Button onClick={() => deleteFavoritePokemon(pokemon.id)}>
+                  deletepoke
+                </Button>
               </div>
             </React.Fragment>
           ))}
