@@ -22,7 +22,8 @@ export const LoginMain = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(login(email, password, history));
   };
 
@@ -33,6 +34,8 @@ export const LoginMain = () => {
   const handleOnchangePassword = (e) => {
     dispatch(changePassword(e.target.value));
   };
+
+  console.log('error; ', error);
 
   return (
     <>
