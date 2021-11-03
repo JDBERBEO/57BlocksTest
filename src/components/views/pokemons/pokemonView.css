@@ -1,32 +1,22 @@
-.containerPokemons {
+.pokemonCardDetails {
   display: flex;
-  width: 100%;
-  height: 100%;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 15px;
-}
-
-.pokemonCard {
-  margin: 15px;
-  box-shadow: 10px 10px 20px rgba(247, 50, 5, 0.995);
+  margin-top: 25px;
+  margin-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  box-shadow: 10px 10px 20px rgb(255, 247, 1);
   background-color: rgba(121, 202, 135, 0.2);
   backdrop-filter: blur(15px);
   border-radius: 10px;
   border: 1px hidden rgba(19, 36, 92, 0.776);
-  width: 25%;
 }
 
-.cardImgTop {
-  width: 100%;
-}
-
-.cardBody {
-  margin-bottom: 30px;
-}
-.cardTitle {
+.pokemonCardDetails {
   font-family: 'Trebuchet MS', sans-serif;
   font-size: x-large;
   color: rgb(17, 16, 79);
@@ -35,9 +25,10 @@
   justify-content: space-between;
   margin-top: 20px;
 }
-.buttonWrapper {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 100px;
-  margin-top: 30px;
+
+.ability {
+  font-size: smaller;
+  color: rgba(38, 244, 72, 0.66);
+  display: list-item;
+  margin: 1px;
 }
