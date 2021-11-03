@@ -17,6 +17,8 @@ You will also see any lint errors in the console.
 ### LOGIN 
 ![15](https://user-images.githubusercontent.com/47923495/140015034-6a08f350-160e-4b12-b606-a9d0a2b74ecf.gif)
 
+![17](https://user-images.githubusercontent.com/47923495/140074429-02cc7d07-73fd-4403-a4fc-6817a4f71a9d.gif)
+
 ### PAGINATION AND DETAILS
 ![16](https://user-images.githubusercontent.com/47923495/140015106-6ced792e-caf8-4d5d-bca7-80321390c11c.gif)
 
